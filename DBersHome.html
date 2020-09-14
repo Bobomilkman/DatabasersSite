@@ -13,7 +13,7 @@
             }
         </style>
         <!--Logo, Text, and Divider-->
-        <img src="Logo.jpg" alt = "logo" style = "width: 100px; height: 100px; vertical-align: middle;">
+        <a href = "DBersHome.html"><img src="Logo.jpg" alt = "logo" style = "width: 100px; height: 100px; vertical-align: middle;"></a>
         <h1 style="display:inline">Databasers Home Page</h1>
         <hr style="height: 10px; background-color: black;">
 
@@ -21,45 +21,91 @@
         <div></div>
 
         <!--Muhammad's Profile-->
-        <img src="muh.jpg" alt = "muhammad" style = "width: 100px; height: 100px; vertical-align: middle;">
+        <img src="muh.jpg" alt = "muhammad" style = "width: 100px; height: 100px; vertical-align: middle;"
+        type = "button" onclick = "imageSwitch('muhDesc')" id = "muhImage">
         <h2 style="display:inline"><a href="muh.html">Muhammad Khan</a></h2>
+        <h3 id = "muhDesc"></h3>
         <div></div>
         <div></div>
         <br>
 
         <!--Ryan's Profile-->
-        <img src="Ryan1.jpeg" alt = "ryan" style = "width: 100px; height: 100px; vertical-align: middle;">
+        <img src="Ryan1.jpeg" alt = "ryan" style = "width: 100px; height: 100px; vertical-align: middle;"
+        type = "button" onclick = "imageSwitch('ryanDesc')" id = "ryanImage">
         <h2 style="display:inline"><a href="ryan.html">Ryan Murphy</a></h2>
-        <div></div>
-        <div></div>
-        <br>
-
-        <!--Jack's Profile-->
-        <img src="jack.jpg" alt = "jack" style = "width: 100px; height: 100px; vertical-align: middle;">
-        <h2 style="display:inline"><a href="jack.html">Jack Eselius</a></h2>
+        <h3 id = "ryanDesc"></h3>
         <div></div>
         <div></div>
         <br>
 
         <!--Sean's Profile-->
-        <img src="sean.jpeg" alt = "sean" style = "width: 100px; height: 100px; vertical-align: middle;">
+        <img src="sean.jpeg" alt = "sean" style = "width: 100px; height: 100px; vertical-align: middle;"
+        type = "button" onclick = "imageSwitch('seanDesc')" id = "seanImage">
         <h2 style="display:inline"><a href="sean.html">Sean Trezza</a></h2>
+        <h3 id = "seanDesc"></h3>
         <div></div>
         <div></div>
         <br>
 
         <!--Trey's Profile-->
-        <img src="trey.jpg" alt = "trey" style = "width: 100px; height: 100px; vertical-align: middle;">
+        <img src="trey.jpg" alt = "trey" style = "width: 100px; height: 100px; vertical-align: middle;"
+        type = "button" onclick = "imageSwitch('treyDesc')" id = "treyImage">
         <h2 style="display:inline"><a href="trey.html">Trey Miller</a></h2>
+        <h3 id = "treyDesc"></h3>
         <div></div>
         <div></div>
         <br>
         
 
-        
+        <script>
+            //This function switches the image clicked and makes the description pop up
+            function imageSwitch(x)
+            {
+                //Resets each description
+                document.getElementById("muhDesc").innerHTML = "";
+                document.getElementById("ryanDesc").innerHTML = "";
+                document.getElementById("seanDesc").innerHTML = "";
+                document.getElementById("treyDesc").innerHTML = "";
 
+                document.getElementById("muhImage").style = "width: 100px; height: 100px; vertical-align: middle;";
+                document.getElementById("ryanImage").style = "width: 100px; height: 100px; vertical-align: middle;";
+                document.getElementById("seanImage").style = "width: 100px; height: 100px; vertical-align: middle;";
+                document.getElementById("treyImage").style = "width: 100px; height: 100px; vertical-align: middle;";
 
-        
+                document.getElementById("muhImage").src = "muh.jpg";
+                document.getElementById("ryanImage").src = "Ryan1.jpeg";
+                document.getElementById("seanImage").src = "sean.jpeg";
+                document.getElementById("treyImage").src = "trey.jpg";
+
+                
+                //This if statement checks which image was clicked and then makes the description and image change
+                if(x == "muhDesc")
+                {
+                    document.getElementById("muhImage").style = "width: 150px; height: 150px; vertical-align: middle;";
+                    document.getElementById("muhImage").src = "muh2.jpeg";
+                    document.getElementById("muhDesc").innerHTML = "Muhammad is an International Student from Pakistan majoring in Computer Science and Economics. He enjoys playing video games and is also a decent chess player.";
+                }
+                else if(x == 'ryanDesc')
+                {
+                    document.getElementById("ryanImage").style = "width: 150px; height: 150px; vertical-align: middle;";
+                    document.getElementById("ryanImage").src = "Ryan2.jpeg";
+                    document.getElementById("ryanDesc").innerHTML = "Ryan is a junior at Lafayette majoring in Computer Science. He is also on the XC and Track teams at Lafayette.";
+                }
+                else if(x == 'seanDesc')
+                {
+                    document.getElementById("seanImage").style = "width: 150px; height: 150px; vertical-align: middle;";
+                    document.getElementById("seanImage").src = "sean2.jpeg";
+                    document.getElementById("seanDesc").innerHTML = "Sean Trezza is a senior at Lafayette college majoring In computer science. He draws a lot, and is part of quidditch and trap floor.";
+                }
+                else if(x == 'treyDesc')
+                {
+                    document.getElementById("treyImage").style = "width: 150px; height: 150px; vertical-align: middle;";
+                    //document.getElementById("treyImage").src = "";
+                    document.getElementById("treyDesc").innerHTML = "Trey is a student at Lafayette.";
+                }
+                 
+            }
+        </script>
     </body>
 
 </html>
